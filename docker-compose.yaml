@@ -1,0 +1,31 @@
+version: '3.6'
+
+services:
+
+  #
+  #  MySQL (Relational Database)
+  #
+  mysql:
+    image: "mysql:5.7"
+    container_name: "platform-mysql"
+    hostname: "mysql"
+    ports:
+      - 33062:3306
+    volumes:
+      - platform-mysql
+    networks:
+      - platform
+    restart: always
+    environment:
+      MYSQL_ROOT_USER: root
+      MYSQL_ROOT_PASSWORD: mysql
+      MYSQL_ROOT_HOST: '%'
+      MYSQL_USER: mysql
+      MYSQL_PASSWORD: mysql
+      MYSQL_DATABASE: platform
+
+volumes:
+  platform-mysql:
+
+networks:
+  platform:

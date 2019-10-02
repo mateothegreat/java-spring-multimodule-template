@@ -1,0 +1,32 @@
+bootJar {
+
+    baseName = 'platform-api'
+    version = '0.0.1'
+
+}
+
+
+configurations {
+
+    testArtifacts.extendsFrom testCompile
+
+}
+
+task testJar(type: Jar) {
+
+    classifier "test"
+    from sourceSets.test.output
+
+}
+
+artifacts {
+
+    testArtifacts testJar
+
+}
+
+dependencies {
+
+    compile project(':module-organizations')
+
+}

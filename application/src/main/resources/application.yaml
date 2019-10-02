@@ -1,0 +1,34 @@
+server:
+  port: 18080
+
+spring:
+
+  security:
+    basic:
+      enabled: false
+  jpa:
+    show-sql: ${DEBUG:false}
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        format_sql: ${DEBUG:false}
+      jaria:
+        usertype:
+          autoRegisterUserTypes: true
+    hibernate:
+      ddl-auto: ${DDL_AUTO:update}
+
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:33062}/${MYSQL_DATABASE:platform}?allowPublicKeyRetrieval=true&reconnect=true&verifyServerCertificate=false&useSSL=false
+    username: ${MYSQL_USER:mysql}
+    password: ${MYSQL_PASS:mysql}
+
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+      WRITE_DATES_AS_TIMESTAMPS: false
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB

@@ -1,0 +1,12 @@
+[submodule "java-spring-module-common"]
+	path = java-spring-module-common
+	url = https://github.com/mateothegreat/java-spring-module-common.git
+[submodule "java-spring-module-logging"]
+	path = java-spring-module-logging
+	url = https://github.com/mateothegreat/java-spring-module-logging.git
+[submodule "java-spring-module-organizations"]
+	path = java-spring-module-organizations
+	url = https://github.com/mateothegreat/java-spring-module-organizations.git
+[submodule "java-spring-module-security"]
+	path = java-spring-module-security
+	url = https://github.com/mateothegreat/java-spring-module-security.git
